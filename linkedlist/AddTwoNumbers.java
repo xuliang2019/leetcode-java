@@ -1,4 +1,4 @@
-class Solution {
+public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode res = new ListNode(0);
         ListNode current = res;
