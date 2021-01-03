@@ -7,9 +7,9 @@ public class IsomorphicStrings {
         int[] a2 = new int[256];
 
         // for each character in string s and t,
-        // use the charcter as the index in a1 and a2
+        // use the character as the index in a1 and a2
         // assign current i to each of a1[s[i]], a2[t[i]]
-        // then itearte to compare the value of a1[s[i]], a2[t[i]]
+        // then iterate to compare the value of a1[s[i]], a2[t[i]]
 
         for (int i = 0; i < s.length(); i++) {
             // when character repeats, 

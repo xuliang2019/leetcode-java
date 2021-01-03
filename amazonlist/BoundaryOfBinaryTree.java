@@ -29,7 +29,7 @@ public class BoundaryOfBinaryTree {
         }
         // find the left and right boundary nodes recursively
         // In genral, node.left is on left boundary.
-        // However, when node is on right boundary and node.right is null, then the node.left is on left boundary
+        // However, when node is on right boundary and node.right is null, then the node.left is on right boundary
         // same mechanism for node.right
         getBounds(node.left, res, lb, rb && node.right == null);
         getBounds(node.right, res, lb && node.left == null, rb);
