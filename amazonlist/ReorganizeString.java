@@ -58,7 +58,7 @@ public class ReorganizeString {
 
     public static void main(String[] args) {
         String s = "aaa";
-        String s2 = "bbbaaacdd";
+        String s2 = "bbbaaacdd ";
         System.out.println(reorganizeString(s));
         System.out.println(reorganizeString(s2));
     }
