@@ -21,6 +21,7 @@ public class QuickSelect {
         int left = start;
         int right = end;
 
+        //after partition only the pivot element moves into it's correct position
         while (left < right) {
             if (nums[left] >= pivot) {
                 swap(nums, left, right);
@@ -30,13 +31,14 @@ public class QuickSelect {
             left++;
         }
         //left is now pointing to the first number that is greater than or equal to the pivot
+        // left is pivot now
         swap(nums, left, end);
 
         //m is the number of numbers that is smaller than pivot
         int m = left - start;
 
         if (m == k - 1) { //in order to find the kth smallest number, there must be k - 1 number smaller than it
-            return pivot;
+            return nums[left];
         }
         else if (k - 1 < m) { //target is in the left subarray
             return quickSelect(nums, k, start, left-1);  //  [start, left-1], [left, end]
@@ -55,7 +57,7 @@ public class QuickSelect {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{3, 5};
-        System.out.println(findKthSmallest(nums, 2));
+        int[] nums = new int[]{3, 2, 1, 5, 6, 4};
+        System.out.println(findKthSmallest(nums, 6));
     }
 }

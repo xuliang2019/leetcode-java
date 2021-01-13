@@ -38,3 +38,38 @@ public class TopKFrequentElements {
         return ans;
     }
 }
+
+//public class TopKFrequentElements {
+    // time complexity nlogn, minHeap costs logn when adding or deleting
+//    public int[] topKFrequent(int[] nums, int k) {
+//        // use a hashmap to cout frequency
+//        // use a minHeap to store the k frequent nums
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        PriorityQueue<Map.Entry<Integer, Integer>> minHeap = new PriorityQueue<>((a, b) -> a.getValue().compareTo(b.getValue()));
+//
+//        for (int n: nums) {
+//            int count = map.getOrDefault(n, 0) + 1;
+//            map.put(n, count);
+//        }
+//
+//        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
+//            minHeap.add(entry);
+//            if (minHeap.size() > k) {
+//                minHeap.poll();
+//            }
+//        }
+//
+//        ArrayList<Integer> list = new ArrayList<>();
+//        while (!minHeap.isEmpty()) {
+//            Map.Entry<Integer, Integer> entry = minHeap.poll();
+//            list.add(entry.getKey());
+//        }
+//
+//        int[] res = new int[k];
+//        for (int i = 0; i < k; i++) {
+//            res[i] = list.get(i);
+//        }
+//        return res;
+//
+//    }
+//}
