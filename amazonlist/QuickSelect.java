@@ -58,6 +58,6 @@ public class QuickSelect {
 
     public static void main(String[] args) {
         int[] nums = new int[]{3, 2, 1, 5, 6, 4};
-        System.out.println(findKthSmallest(nums, 6));
+        System.out.println(findKthSmallest(nums, 3));
     }
 }
