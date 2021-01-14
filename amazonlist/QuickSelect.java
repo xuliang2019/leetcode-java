@@ -31,14 +31,14 @@ public class QuickSelect {
             left++;
         }
         //left is now pointing to the first number that is greater than or equal to the pivot
-        // left is pivot now
+        // left is pivot index now
         swap(nums, left, end);
 
         //m is the number of numbers that is smaller than pivot
         int m = left - start;
 
         if (m == k - 1) { //in order to find the kth smallest number, there must be k - 1 number smaller than it
-            return nums[left];
+            return pivot;
         }
         else if (k - 1 < m) { //target is in the left subarray
             return quickSelect(nums, k, start, left-1);  //  [start, left-1], [left, end]
@@ -57,7 +57,7 @@ public class QuickSelect {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{3, 2, 1, 5, 6, 4};
+        int[] nums = new int[]{8, 2, 4};
         System.out.println(findKthSmallest(nums, 3));
     }
 }

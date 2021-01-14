@@ -7,12 +7,13 @@ public class MettingRooms {
         // sort intervals with intervals[0][0] then intervals[0][1]
         Arrays.sort(intervals, (i, j) -> Integer.compare(i[0], j[0]));
 
-        int[] temp = intervals[0];
+        int[] prev = intervals[0];
         for (int i = 1; i < intervals.length; i++) {
-            if (temp[1] > intervals[i][0]) {
+            int[] curr = intervals[i];
+            if (prev[1] > curr[0]) {
                 return false;
             }
-            temp = intervals[i];
+            prev = curr;
         }
         return true;
 
