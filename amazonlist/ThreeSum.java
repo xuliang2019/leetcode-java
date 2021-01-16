@@ -10,7 +10,7 @@ public class ThreeSum {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
         for (int i = 0; i < nums.length - 2; i++) {
-            if (i == 0 || (i > 0 && nums[i] != nums[i-1])) { // todo not understand here
+            if (i == 0 || (i > 0 && nums[i] != nums[i-1])) { // skip duplicate elements from start
                 int middle = i+1;
                 int end = nums.length - 1;
                 int remain = 0 - nums[i];
@@ -19,7 +19,7 @@ public class ThreeSum {
                 while (middle < end) {
                     if (remain == nums[middle] + nums[end]) {
                         res.add(Arrays.asList(nums[i], nums[middle], nums[end]));
-                        // skip equal elements
+                        // skip equal elements from adding answers
                         while (middle < end && nums[middle] == nums[middle+1]) {middle++;}
                         while (middle < end && nums[end] == nums[end-1]) {end--;}
                         // keep finding new answer
