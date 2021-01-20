@@ -73,3 +73,28 @@ public class TopKFrequentElements {
 //
 //    }
 //}
+
+//class Solution {
+//    public int[] topKFrequent(int[] nums, int k) {
+//        HashMap<Integer, Integer> count = new HashMap<>();
+//        int size = nums.length;
+//        for (int i = 0; i < size; i++) {
+//            count.put(nums[i], count.getOrDefault(nums[i], 0) + 1);
+//        }
+//
+//        PriorityQueue<Map.Entry<Integer,Integer>> minHeap = new PriorityQueue<>((a, b) -> a.getValue() - b.getValue());
+//        for (Map.Entry<Integer, Integer> entry: count.entrySet()) {
+//            minHeap.offer(entry);
+//            if (minHeap.size() > k) {
+//                minHeap.poll();
+//            }
+//        }
+//        int[] res = new int[k];
+//        int n = minHeap.size();
+//        for (int i = 0; i < n; i++) {
+//            Map.Entry<Integer, Integer> entry = minHeap.poll();
+//            res[i] = entry.getKey();
+//        }
+//        return res;
+//    }
+//}

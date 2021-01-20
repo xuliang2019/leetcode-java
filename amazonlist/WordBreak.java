@@ -12,6 +12,7 @@ public class WordBreak {
 
         for (int i = 1; i <= s.length(); i++) {
             for (int j = i - 1; j >= 0; j--) {
+                // str[i] = str[j] + str[j,i]
                 // dp[j] means s.substring(0, j)
                 // only the two conditions ensure dp[i] is true
                 dp[i] = dp[j] && set.contains(s.substring(j, i));
