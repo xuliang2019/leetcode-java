@@ -5,7 +5,7 @@ public class TopKFrequentWords {
         Map<String, Integer> map = new HashMap<>();
         // since we need to poll redundant elements from min heap,
         // the comparator is the opposite of the question constrains when frequencies are equal
-        PriorityQueue<Map.Entry<String,Integer>> pq = new PriorityQueue<>(
+        PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
                 (a, b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey()) : a.getValue() - b.getValue()
         );
         List<String> res = new ArrayList<>();

@@ -11,7 +11,7 @@ public class MinDifficultyJobSchedule {
             dp[i] = inf;
         }
 
-        // iterate days to get the total min difficulities within current passed days
+        // iterate days to get the total min difficulties within current passed days
         for (int d = 1; d <= D; d++) {
             // n -d means we can't assign a work over two days
             // this loop update the total dp array for each day
