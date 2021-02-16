@@ -1,5 +1,6 @@
  public class JumpGame {
     public boolean canJump(int[] nums) {
+        // similar to dp
         // for each index, get the max distance it can reach
         // update the max distance, compare it with nums.length - 1
         // if it exceeds the nums.length-1, return true, otherwise return false
