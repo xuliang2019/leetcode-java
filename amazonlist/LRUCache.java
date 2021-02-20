@@ -60,6 +60,7 @@ public class LRUCache {
     }
 
     public void addToHead(Node node) {
+        // link head.next first
         node.next = head.next;
         head.next.prev = node;
 
