@@ -8,21 +8,22 @@ public class MergeKLists {
         if (lists.length == 0) { return null; }
         // use a priority queue to sort ListNode ascending in realtime
         int k = lists.length;
-        PriorityQueue<ListNode> pq = new PriorityQueue<ListNode>(k, new Comparator<ListNode>() {
-            @Override
-            // ascending order
-            public int compare(ListNode node1, ListNode node2) {
-                if (node1.val < node2.val) {
-                    return -1;
-                }
-                else if (node1.val == node2.val) {
-                    return 0;
-                }
-                else {
-                    return 1;
-                }
-            }
-        });
+        PriorityQueue<ListNode> pq = new PriorityQueue<ListNode>((node1, node2) -> (node1.val - node2.val));
+//        PriorityQueue<ListNode> pq = new PriorityQueue<ListNode>(k, new Comparator<ListNode>() {
+//            @Override
+//            // ascending order
+//            public int compare(ListNode node1, ListNode node2) {
+//                if (node1.val < node2.val) {
+//                    return -1;
+//                }
+//                else if (node1.val == node2.val) {
+//                    return 0;
+//                }
+//                else {
+//                    return 1;
+//                }
+//            }
+//        });
 
         // append ListNode to pq
         for (ListNode node: lists) {
