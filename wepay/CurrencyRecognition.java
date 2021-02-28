@@ -1,6 +1,7 @@
 // return 1 if dollars, 2 if euros, 3 if japanese yen, -1 not any one
 class Solution{
-    public int getCurrencyType(String s) {
+    // bug here
+    public int getMoneyType(String s) {
         if (s.indexOf("$") != -1) { // size 1
             return 1;
         }
@@ -14,12 +15,12 @@ class Solution{
     }
 
     public boolean isPositive(String s) {
-        int currencyType = getCurrencyType(s);
-        if (currencyType == -1) { return false;}
+        int moneyType = getMoneyType(s);
+        if (moneyType == -1) { return false;}
         int l = 0;
         int r = s.length() - 1;
 
-        if (currencyType == 1) {
+        if (moneyType == 1) {
             l = 1; // skip '$' with 1 byte
         }
         else {
@@ -41,7 +42,7 @@ class Solution{
             }
             else if (c == '.') {
                 // japanese yen do not have cents or not exactly two digits of precision
-                if (currencyType == 3 || (r - i != 2)) {
+                if (moneyType == 3 || (r - i != 2)) {
                     return false;
                 }
                 prevPosition = i;
@@ -56,7 +57,7 @@ class Solution{
             else {
                 return false;
             }
-        }
+        }` `
         if (s.charAt(l) == '0') {
             // leading zero
             if (l == r) {
@@ -71,10 +72,10 @@ class Solution{
     }
 
     public boolean isCurrency(String strAmount) {
-        int len = strAmount.length();
+        int num = strAmount.length();
         int l = 0;
-        int r = len - 1;
-        if (len == 0 || strAmount.charAt(l) == ' ' || strAmount.charAt(r) == ' ') {
+        int r = num - 1;
+        if (num == 0 || strAmount.charAt(l) == ' ' || strAmount.charAt(r) == ' ') {
             return false; // empty string or leading or trailing whitespace
         }
 
