@@ -57,7 +57,7 @@ class Solution{
             else {
                 return false;
             }
-        }` `
+        }
         if (s.charAt(l) == '0') {
             // leading zero
             if (l == r) {
