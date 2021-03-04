@@ -1,5 +1,5 @@
 class Solution {
-    private final int[] directory = {0, 0, 1, 0, -1, 0}; // five cells, itself and four neighbors
+    private final int[][] dirs = new int[][]{{0, 0}, {0, 1}, {0, -1}, {1, 0}, {-1, 0}}; // five cells, itself and four neighbors
     public int minFlips(int[][] mat) {
         int start = 0, m = mat.length, n = mat[0].length;
         // covert mat to an int using binary expression
@@ -20,9 +20,9 @@ class Solution {
                     for (int j = 0; j < n; j++) {
                         int next = current;
                         // for each cell, flip itself and its neighbors
-                        for (int k = 0; k < 5; k++) {
-                            int row = i + directory[k];
-                            int col = j + directory[k + 1];
+                        for (int[] dir: dirs) {
+                            int row = i + dir[0];
+                            int col = j + dir[1];
                             if (row >= 0 && row < m && col >= 0 && col < n) {
                                 next ^= 1 << (row * n + col);
                             }
